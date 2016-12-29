@@ -10,5 +10,8 @@ statuses = api.GetUserTimeline('25073877', count=500)
 
 with open('tweets.txt', 'w') as f:
 	for status in statuses:
-		f.write(status.text + '\n')
-
+		try:
+			f.write(status.text + '\n')
+		except:
+			pass
+		
